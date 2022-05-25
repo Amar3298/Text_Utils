@@ -1,0 +1,93 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark font1">
+        <div class="container-fluid ">
+            <a class="navbar-brand box1" href="/">SA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container c1f">
+        <p class="h1 text-center">Text Analysis</p>
+        <form class="my-5" action="/remove" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <div class="form-floating">
+                    <textarea class="form-control" name="getT" placeholder="Leave a comment here" id="floatingTextarea"
+                        style="user-select: auto; height: 278px;"></textarea>
+
+                    <label for="floatingTextarea">Add the text here</label>
+                </div>
+                <div class="input-group">
+                    <div class="input-group-text mx-2 c1">
+                        <input class="form-check-input mt-0 " name="removepuc" type="radio" value=""
+                            aria-label="Radio button for following text input">
+                    </div>
+                    <span>Remove Punctuation </span>
+                    <div class="input-group-text mx-2 c1">
+                        <input class="form-check-input mt-0 " name="fullcapsH" type="radio" value=""
+                            aria-label="Radio button for following text input">
+                    </div>
+                    <span>Capitalize </span>
+                    <div class="input-group-text mx-2 c1">
+                        <input class="form-check-input mt-0 " name="lowercase" type="radio" value=""
+                            aria-label="Radio button for following text input">
+                    </div>
+                    <span>Lowercase </span>
+                    <div class="input-group-text mx-2 c1">
+                        <input class="form-check-input mt-0 " name="newlineRemover" type="radio" value=""
+                            aria-label="Radio button for following text input">
+                    </div>
+                    <span>New line remover</span>
+                    <div class="input-group-text mx-2 c1">
+                        <input class="form-check-input mt-0 " name="extraSpaceh" type="radio" value=""
+                            aria-label="Radio button for following text input">
+                    </div>
+                    <span>Extra space remover</span>
+                    <div class="input-group-text mx-2 c1">
+                        <input class="form-check-input mt-0 " name="countChar" type="radio" value=""
+                            aria-label="Radio button for following text input">
+                    </div>
+                    <span>No of letters</span>
+                </div>
+                <button type="submit" class="btn btn-primary my-1">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

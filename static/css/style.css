@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap");
+.c1 {
+  cursor: pointer !important;
+}
+
+.box1 {
+  background-color: yellow !important;
+  border: 3px solid wheat !important;
+  color: black !important;
+  border-radius: 25px !important;
+  padding: 2px 8px !important;
+}
+
+.box1:hover {
+  background-color: rgb(163, 171, 24) !important;
+  color: black !important;
+}
+.font1 {
+  font-family: "Potta One", cursive !important;
+  font-size: 20px !important;
+}
+
+.c1f {
+  font-family: "Roboto", sans-serif !important;
+}
