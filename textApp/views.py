@@ -47,9 +47,7 @@ def analyse(request):
     elif(newlineRemover!="off"):
         analysed = ""
         for char in getTexta:
-            if char=="\n":
-                pass
-            else:
+            if char!="\n" and char!="\r":
                 analysed = analysed + char
         dic1 = {
         "Purpose":"Coverting to uppercase",
