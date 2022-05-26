@@ -23,8 +23,10 @@ def analyse(request):
             "Purpose":"Removal of Punctuation",
             "analyze":analysed
         }
-        return render(request,"analyze.html",dic1)
-    elif(fullcaps!="off"):
+        # return render(request,"analyze.html",dic1)
+        getTexta = analysed
+        
+    if(fullcaps!="off"):
         analysed = ""
         for char in getTexta:
             analysed = analysed + char.upper()
@@ -32,9 +34,10 @@ def analyse(request):
         "Purpose":"Coverting to uppercase",
         "analyze":analysed
         }
-        return render(request,"analyze.html",dic1) 
+        # return render(request,"analyze.html",dic1) 
+        getTexta = analysed
 
-    elif(lowercase!="off"):
+    if(lowercase!="off"):
         analysed = ""
         for char in getTexta:
             analysed = analysed + char.lower()
@@ -42,9 +45,10 @@ def analyse(request):
         "Purpose":"Coverting to uppercase",
         "analyze":analysed
         }
-        return render(request,"analyze.html",dic1) 
+        # return render(request,"analyze.html",dic1)
+        getTexta = analysed 
 
-    elif(newlineRemover!="off"):
+    if(newlineRemover!="off"):
         analysed = ""
         for char in getTexta:
             if char!="\n" and char!="\r":
@@ -53,9 +57,10 @@ def analyse(request):
         "Purpose":"Coverting to uppercase",
         "analyze":analysed
         }
-        return render(request,"analyze.html",dic1) 
+        # return render(request,"analyze.html",dic1)
+        getTexta = analysed 
 
-    elif(extraSpaceh!="off"):
+    if(extraSpaceh!="off"):
         analysed = ""
         for index,char in enumerate(getTexta):
             if getTexta[index]==" " and  getTexta[index+1]==" ":
@@ -66,15 +71,18 @@ def analyse(request):
         "Purpose":"Coverting to uppercase",
         "analyze":analysed
         }
-        return render(request,"analyze.html",dic1) 
-    elif(countChar!="off"):
+        # return render(request,"analyze.html",dic1)
+        getTexta = analysed 
+    if(countChar!="off"):
         analysed = len(getTexta)
         # print(analysed)
         dic1 = {
         "Purpose":"Coverting to uppercase",
         "analyze":analysed
         }
-        return render(request,"analyze.html",dic1) 
-    else:
-        return HttpResponse("R")
+    
+    if(checkRadio!="off" and fullcaps!="off" and lowercase!="off" and newlineRemover!="off" and extraSpaceh!="off" and countChar!="off"):
+        return HttpResponse("Error")
+    
+    return render(request,"analyze.html",dic1) 
 
